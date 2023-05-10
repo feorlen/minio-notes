@@ -11,7 +11,7 @@ Port forwarding needed to access host/guest not covered. In my case host is a ph
 
 ## Install dependancies
 
-This is what was needed on a standard Ubuntu Server 22.04. Someone who already has a k8s deployment probably has these, perhaps except `yq`.
+This is what was needed on a standard Ubuntu Server 22.04. Someone who already has a k8s deployment probably has these, perhaps except `yq`. For docs, reference its docs for `kubectl` commands.
 
 * [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 * [docker](https://docs.docker.com/engine/install/ubuntu/)
