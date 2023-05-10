@@ -56,6 +56,10 @@ For testing, if one is not already available:
   yq e -i '.spec.ports[0].nodePort = 30080' service.yaml
   kubectl apply -f service.yaml
   ```
+  What is this error?
+  ```
+  Warning: resource services/console is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply.
+  ```
 
 * Create `operator.yaml`
   ```
