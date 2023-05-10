@@ -89,17 +89,13 @@ For testing, if one is not already available:
   --create-namespace \
   tenant-ns tenant-5.0.4.tgz
   ```
-* Expose tenant service for Console UI
-  ```
-  kubectl --namespace tenant-ns port-forward svc/myminio-console 9443:9443
-  ```
   
 ### Enable the Operator and Console web UIs
 
 * Expose the Operator and tenant ports
   ```
   kubectl --namespace minio-operator port-forward svc/console 9090:9090
-  kubectl --namespace tenant-ns port-forward svc/minio-console 9443:9443
+  kubectl --namespace tenant-ns port-forward svc/myminio-console 9443:9443
   ```
 
 Log into Operator and Console:
