@@ -3,8 +3,11 @@
 Much of this is scaffolding needed to execute the actual Helm commands.
 
 Test environment:
+
 * Ubuntu 22.04 host
 * Ubuntu 22.04 guest VM
+
+Port forwarding needed to access host/guest not covered. In my case host is a physical machine, but headless.
 
 ## Install dependancies
 
