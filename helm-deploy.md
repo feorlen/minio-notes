@@ -85,19 +85,19 @@ For testing, if one is not already available:
   kubectl apply -f console-secret.yaml
   ```
   
-  * Expose the Operator port
-    ```
-    kubectl --namespace minio-operator port-forward svc/console 9090:9090
-    ```
+* Expose the Operator port
+  ```
+  kubectl --namespace minio-operator port-forward svc/console 9090:9090
+  ```
   
-  * Log into Operator:
-    * Get JWT
-      ```
-      SA_TOKEN=$(k -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
-      echo $SA_TOKEN
-      ```
-    * http://localhost:9090
-    * Log in with the token
+* Log into Operator:
+  * Get JWT
+    ```
+    SA_TOKEN=$(k -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
+    echo $SA_TOKEN
+    ```
+  * http://localhost:9090
+  * Log in with the token
 
 ### Deploy a Tenant
 
