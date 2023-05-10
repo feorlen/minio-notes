@@ -128,7 +128,7 @@ For testing, if one is not already available:
 
   **Is this a default login? How do you know to use this?**
 
-## Steps to document (proposed)
+## What to document (proposed)
 
 * Install Operator with `helm` command and downloaded chart tgz
 * Create `service.yaml`, `operator.yaml`, `console-secret.yaml`
