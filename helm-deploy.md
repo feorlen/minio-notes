@@ -31,6 +31,7 @@ For testing, if one is not already available:
   ```
   sudo chmod 666 /var/run/docker.sock
   ```
+  Not sure when this is needed or why it isn't correct alread.
   
 ### Install and Configure Operator
 
@@ -80,6 +81,20 @@ For testing, if one is not already available:
   kubectl apply -f console-secret.yaml
   ```
   
+  * Expose the Operator port
+  ```
+  kubectl --namespace minio-operator port-forward svc/console 9090:9090
+  ```
+  
+  * Log into Operator:
+    * Get JWT
+      ```
+      SA_TOKEN=$(k -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
+      echo $SA_TOKEN
+      ```
+    * http://localhost:9090
+    * Log in with the token
+
 ### Deploy a Tenant
 
 * Helm command
@@ -89,20 +104,10 @@ For testing, if one is not already available:
   --create-namespace \
   tenant-ns tenant-5.0.4.tgz
   ```
-  
-### Enable the Operator and Console web UIs
 
-* Expose the Operator and tenant ports
+* Expose the tenant port
   ```
-  kubectl --namespace minio-operator port-forward svc/console 9090:9090
   kubectl --namespace tenant-ns port-forward svc/myminio-console 9443:9443
   ```
 
-Log into Operator and Console:
-* Get JWT
-  ```
-  SA_TOKEN=$(k -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
-echo $SA_TOKEN
-  ```
-* Log into the Operator UI with the token
 * Log into the MinIO Console with minio/minio123
