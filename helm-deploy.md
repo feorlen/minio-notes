@@ -86,9 +86,9 @@ For testing, if one is not already available:
   ```
   
   * Expose the Operator port
-  ```
-  kubectl --namespace minio-operator port-forward svc/console 9090:9090
-  ```
+    ```
+    kubectl --namespace minio-operator port-forward svc/console 9090:9090
+    ```
   
   * Log into Operator:
     * Get JWT
