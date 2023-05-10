@@ -40,6 +40,7 @@ For testing, if one is not already available:
   curl -O https://raw.githubusercontent.com/minio/operator/master/helm-releases/operator-5.0.4.tgz
   curl -O https://raw.githubusercontent.com/minio/operator/master/helm-releases/tenant-5.0.4.tgz
   ```
+  **I think just the `Chart.yaml` file is the Helm chart. What are the other files?**
 
 * Deploy Operator with Helm
   ```
@@ -121,3 +122,17 @@ For testing, if one is not already available:
   ```
 
 * Log into the MinIO Console with minio/minio123
+
+  **Is this a default login? How do you know to use this?**
+
+## Steps to document (proposed)
+
+* Install Operator with `helm` command and downloaded chart tgz
+* Create `service.yaml`, `operator.yaml`, `console-secret.yaml`
+* `port-forward svc/console 9090:9090` to permit logging into Operator
+* Get the JWT and login to Operator
+* Install a tenant with `helm` command and downloaded chart tgz
+* `port-forward svc/myminio-console 9443:9443` to permit logging into the MinIO Console
+* Login to the MinIO Console with minio/minio123
+
+Note: other setup steps suitable for a personal wiki page showing entire process. How would this work with something other than kind/docker?
