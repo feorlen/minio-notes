@@ -31,7 +31,7 @@ For testing, if one is not already available:
   ```
   sudo chmod 666 /var/run/docker.sock
   ```
-  Not sure when this is needed or why it isn't correct alread.
+  **When is this needed and why it isn't correct already?**
   
 ### Install and Configure Operator
 
@@ -56,7 +56,7 @@ For testing, if one is not already available:
   yq e -i '.spec.ports[0].nodePort = 30080' service.yaml
   kubectl apply -f service.yaml
   ```
-  What is this error?
+  **What is this warning?**
   ```
   Warning: resource services/console is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply.
   ```
@@ -67,7 +67,7 @@ For testing, if one is not already available:
   yq -i -e '.spec.replicas |= 1' operator.yaml
   kubectl apply -f operator.yaml
   ```
-
+  
 * Create `console-secret.yaml`
 
   Lines 7-14 from `https://github.com/minio/operator/blob/master/resources/base/console-ui.yaml`
@@ -89,6 +89,12 @@ For testing, if one is not already available:
   ```
   kubectl --namespace minio-operator port-forward svc/console 9090:9090
   ```
+  **Can this command be run in the background? What is the correct method for a production environment?**
+  
+  **Sometimes I get this error. What is it and how to resolve?**
+  ```
+  error: unable to forward port because pod is not running. Current status=Pending
+  ```
   
 * Log into Operator:
   * Get JWT
@@ -96,7 +102,7 @@ For testing, if one is not already available:
     SA_TOKEN=$(k -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
     echo $SA_TOKEN
     ```
-  * http://localhost:9090
+  * Go to http://localhost:9090
   * Log in with the token
 
 ### Deploy a Tenant
