@@ -32,7 +32,7 @@ For testing, if one is not already available.
   ```
   kind create cluster --config ./kind-config.yaml
   ```
-* If needed, change permissions on the Docker socket
+* If the above fails with `permission denied`, change permissions on the Docker socket
   ```
   sudo chmod 666 /var/run/docker.sock
   ```
