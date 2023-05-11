@@ -132,6 +132,19 @@ For testing, if one is not already available.
 * Log into the MinIO Console with minio/minio123
 
   **Is this a default login? How do you know to use this?**
+  
+* Expose mc port
+
+  **I am not able to get this to work, not sure what I am missing**
+  
+  ```
+  kubectl port-forward svc/myminio-hl 9000 -n tenant-ns
+  ```
+  ```
+  $ mc alias set myminio https://localhost:9000 minio minio123 --insecure
+  Command 'mc' not found, but can be installed with:
+  sudo apt install mc
+  ```
 
 ## What to document (proposed)
 
