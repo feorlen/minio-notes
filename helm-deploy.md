@@ -23,7 +23,9 @@ This is what was needed on a standard Ubuntu Server 22.04. Someone who already h
 
 ### Create a Cluster
 
-For testing, if one is not already available:
+For testing, if one is not already available.
+
+**What is the minimum number of nodes for a viable test? Are four workers required?**
 
 * Create new `kind-config.yaml` with contents from [@cniackz](https://github.com/cniackz/public/wiki/How-to-install-MinIO-Using-Helm-in-Kubernetes#steps)
 * Create the cluster
