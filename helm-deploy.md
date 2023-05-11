@@ -125,6 +125,9 @@ For testing, if one is not already available.
   ```
   kubectl --namespace tenant-ns port-forward svc/myminio-console 9443:9443
   ```
+* Go to https://localhost:9443
+
+  **If I accidentally try http instead of https I get an error in the browser and `lost connection to pod` from the port-forward command. Have to run it again?**
 
 * Log into the MinIO Console with minio/minio123
 
