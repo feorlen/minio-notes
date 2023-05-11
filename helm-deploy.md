@@ -105,7 +105,7 @@ For testing, if one is not already available.
 * Log into Operator:
   * Get JWT
     ```
-    SA_TOKEN=$(k -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
+    SA_TOKEN=$(kubectl -n minio-operator  get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode)
     echo $SA_TOKEN
     ```
   * Go to http://localhost:9090
