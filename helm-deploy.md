@@ -95,9 +95,9 @@ For testing, if one is not already available.
   ```
   kubectl --namespace minio-operator port-forward svc/console 9090:9090
   ```
-  **Can this command be run in the background? What is the correct method for a production environment?**
+  **Can this command be run in the background? What is the correct method for a production environment? I get `broken pipe` a lot, but all hosts involved are on the same local network.**
   
-  **Sometimes I get this error. What is it and how to resolve?**
+  **Sometimes I get this error. What is it and how to resolve? Mostly just need to wait a bit longer. Occasionally the pod doesn't come up at all. How do you determine/resolve that?**
   ```
   error: unable to forward port because pod is not running. Current status=Pending
   ```
